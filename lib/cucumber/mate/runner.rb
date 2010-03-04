@@ -50,7 +50,7 @@ module Cucumber
         end
         in_project_dir do
           @output << %Q{Running: #{full_command = "#{RUBY_BIN} #{command} #{@file.rake_task} #{argv.join(' ')}"} \n}
-          @output << Kernel.system(full_command)
+          @output << IO.popen(full_command, 'r') {|io| io.read }
         end
       end
       
