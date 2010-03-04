@@ -8,5 +8,6 @@ command 'Goto Current Step' do |cmd|
   cmd.invoke do
     require ENV['TM_BUNDLE_SUPPORT'] + "/cucumber/mate/feature_helper"
     Cucumber::Mate::FeatureHelper.new(ENV['TM_FILEPATH']).goto_current_step(ENV['TM_LINE_NUMBER'])
+    nil
   end
 end

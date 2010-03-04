@@ -1,5 +1,5 @@
 # This is based on the official RSpec tm-bundle
-require 'rubygems'
+#require 'rubygems'
 
 if ENV['TM_PROJECT_DIRECTORY']
   rspec_rails_plugin = File.join(ENV['TM_PROJECT_DIRECTORY'],'vendor','plugins','rspec','lib')
@@ -17,7 +17,7 @@ if ENV['TM_PROJECT_DIRECTORY']
     $LOAD_PATH.unshift(rspec_lib)
   end
 end
-require 'spec'
+#require 'spec'
 
 $LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), '..')))
 require "cucumber/mate/feature_helper"

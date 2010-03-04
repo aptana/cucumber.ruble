@@ -1,6 +1,6 @@
-require "#{ENV['TM_SUPPORT_PATH']}/lib/textmate"
-require "#{ENV['TM_SUPPORT_PATH']}/lib/ui"
-require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes"
+#require "#{ENV['TM_SUPPORT_PATH']}/lib/textmate"
+require "ruble/ui"
+#require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes"
 require "tempfile"
 
 module Cucumber
@@ -29,18 +29,18 @@ module Cucumber
             end
             list.index(res.strip)
           else
-            TextMate::UI.menu(list)
+            Ruble::UI.menu(list)
           end
         end
 
         def alert(options = {})
           options = {:message => options} if options.kind_of?(String)
           options = {:style => :informational, :title => 'Alert!', :message => '', :buttons => 'OK'}.merge(options)
-          TextMate::UI.alert(options[:style], options[:title], options[:message], options[:buttons])
+          Ruble::UI.alert(options[:style], options[:title], options[:message], options[:buttons])
         end
 
         def request_confirmation(options)
-          TextMate::UI.request_confirmation(options)
+          Ruble::UI.request_confirmation(options)
         end
 
         def create_file(file_path)
@@ -48,12 +48,14 @@ module Cucumber
           `touch "#{file_path}"`
         end
 
+        # FIXME Convert this code to work in RadRails!
         def create_and_open_file(file_path)
           create_file(file_path)
           `osascript &>/dev/null -e 'tell app "SystemUIServer" to activate' -e 'tell app "TextMate" to activate'`
           `"$TM_SUPPORT_PATH/bin/mate" "#{file_path}"`
         end
 
+        # FIXME Convert this code to work in RadRails!
         def insert_text(text)
           `osascript &>/dev/null -e 'tell app "SystemUIServer" to activate' -e 'tell app "TextMate" to activate'`
           escaped_content = text.gsub("\n","\\n").gsub('$','\\$').gsub('"','\\\\\\\\\\\\"')

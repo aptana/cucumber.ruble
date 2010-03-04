@@ -1,4 +1,4 @@
-require 'rubygems'
+#require 'rubygems'
 
 module Cucumber
   module Mate
