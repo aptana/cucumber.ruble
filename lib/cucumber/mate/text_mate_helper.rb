@@ -13,7 +13,7 @@ module Cucumber
         #   :line   - line number (default: ENV['TM_LINE_NUMBER'])
         #   :column - column number (default: 1)
         def goto_file(file_path, options = {})
-          TextMate.go_to(options.merge(:file => file_path))
+          Ruble::Editor.go_to(options.merge(:file => file_path))
         end
 
         def display_select_list(options)

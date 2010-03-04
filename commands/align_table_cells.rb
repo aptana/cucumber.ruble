@@ -9,7 +9,7 @@ command 'Save & Align Table Cells' do |cmd|
 #!/usr/bin/env sh
 cat <<'RUBYEOF' > /tmp/cucumber-$$.rb
 
-require ENV['TM_BUNDLE_SUPPORT'] + "/lib/cucumber/mate/table_aligner"
+require ENV['TM_BUNDLE_SUPPORT'] + "/cucumber/mate/table_aligner"
 
 puts(Cucumber::Mate::TableAligner.new.align(STDIN.readlines))
 RUBYEOF

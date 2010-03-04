@@ -37,7 +37,7 @@ module Ruble
     unless method_defined?(:to_env_pre_cuke_bundle)
       alias :to_env_pre_cuke_bundle :to_env
       def to_env
-        env_hash = to_env_pre_ruby_bundle
+        env_hash = to_env_pre_cuke_bundle
         scopes = current_scope.split(' ')
         if !scopes.select {|scope| scope.start_with? "text.cucumber.feature" }.empty?
           env_hash['TM_COMMENT_START'] = "# "
