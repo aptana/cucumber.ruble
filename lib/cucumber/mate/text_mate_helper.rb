@@ -1,6 +1,4 @@
-#require "#{ENV['TM_SUPPORT_PATH']}/lib/textmate"
 require "ruble/ui"
-#require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes"
 require "tempfile"
 
 module Cucumber
@@ -16,6 +14,7 @@ module Cucumber
           Ruble::Editor.go_to(options.merge(:file => file_path))
         end
 
+        # FIXME What is Ninja Search?! How do we port this to Linux/Windows?
         def display_select_list(options)
           ninja_search = "/Applications/NinjaSearch.app/Contents/MacOS/NinjaSearch"
           list = options
@@ -43,23 +42,19 @@ module Cucumber
           Ruble::UI.request_confirmation(options)
         end
 
+        # FIXME Use fileutils or something so this will work on Windows!
         def create_file(file_path)
           `mkdir -p "#{File.dirname(file_path)}"`
           `touch "#{file_path}"`
         end
 
-        # FIXME Convert this code to work in RadRails!
         def create_and_open_file(file_path)
           create_file(file_path)
-          `osascript &>/dev/null -e 'tell app "SystemUIServer" to activate' -e 'tell app "TextMate" to activate'`
-          `"$TM_SUPPORT_PATH/bin/mate" "#{file_path}"`
+          Ruble::Editor.open(file_path)
         end
 
-        # FIXME Convert this code to work in RadRails!
         def insert_text(text)
-          `osascript &>/dev/null -e 'tell app "SystemUIServer" to activate' -e 'tell app "TextMate" to activate'`
-          escaped_content = text.gsub("\n","\\n").gsub('$','\\$').gsub('"','\\\\\\\\\\\\"')
-          `osascript &>/dev/null -e "tell app \\"TextMate\\" to insert \\"#{escaped_content}\\" as snippet true"`
+          Ruble::Editor.active.insert_as_snippet(text)
         end
         
         def too_many_to_select
