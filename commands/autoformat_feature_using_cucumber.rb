@@ -5,9 +5,12 @@ command 'Autoformat Feature (using Cucumber)' do |cmd|
   cmd.output = :discard
   cmd.input = :none, :document
   cmd.invoke do
+    require 'stringio'
+    output = StringIO.new
     require ENV['TM_BUNDLE_SUPPORT'] + "/cucumber/mate/feature_helper"
-    runner = Cucumber::Mate::Runner.new(STDOUT, ENV['TM_PROJECT_DIRECTORY'], ENV['TM_FILEPATH'], ENV['TM_CUCUMBER_BIN'], ENV['TM_CUCUMBER_OPTS'])
+    runner = Cucumber::Mate::Runner.new(output, ENV['TM_PROJECT_DIRECTORY'], ENV['TM_FILEPATH'], ENV['TM_CUCUMBER_BIN'], ENV['TM_CUCUMBER_OPTS'])
     
     runner.autoformat_feature
+    output.string
   end
 end
