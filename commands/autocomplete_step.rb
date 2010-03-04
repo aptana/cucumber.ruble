@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Save & Align Table Cells' do |cmd|
+command 'Save and Align Table Cells' do |cmd|
   cmd.key_binding = 'ALT+ESC'
   cmd.scope = 'text.cucumber.feature'
   cmd.output = :insert_as_snippet

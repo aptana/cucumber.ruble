@@ -1,7 +1,7 @@
 require 'ruble'
 
 command 'Create All Undefined Steps' do |cmd|
-  cmd.key_binding = 'CONTROL+ALT+SHIFT+COMMAND+DOWN_ARROW'
+  cmd.key_binding = 'CONTROL+ALT+SHIFT+COMMAND+ARROW_DOWN'
   cmd.scope = 'text.cucumber.feature, source.ruby.cucumber.steps'
   cmd.output = :show_as_tooltip
   cmd.input = :none

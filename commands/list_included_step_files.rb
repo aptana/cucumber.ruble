@@ -1,7 +1,7 @@
 require 'ruble'
 
 command 'Choose Alternate File' do |cmd|
-  cmd.key_binding = 'CONTROL+SHIFT+UP_ARROW'
+  cmd.key_binding = 'CONTROL+SHIFT+ARROW_UP'
   cmd.scope = 'text.cucumber.feature, source.ruby.rspec.cucumber.steps'
   cmd.output = :show_as_tooltip
   cmd.input = :none
