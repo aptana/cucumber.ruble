@@ -1,7 +1,7 @@
 require 'ruble'
 
 command 'Goto Current Step' do |cmd|
-  cmd.key_binding = 'CONTROL+M2+`+$+'
+  cmd.key_binding = 'CONTROL+ALT+SHIFT+DOWN_ARROW'
   cmd.scope = 'text.cucumber.feature, source.ruby.cucumber.steps'
   cmd.output = :show_as_tooltip
   cmd.input = :none, :document
