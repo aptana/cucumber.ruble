@@ -1,6 +1,11 @@
 require 'ruble'
 
 bundle 'Cucumber' do |bundle|
+  bundle.author = 'Christopher Williams'
+  bundle.copyright = "© Copyright 2010 Aptana Inc. Distributed under the MIT license."
+  bundle.description = "Cucumber RadRails bundle, ported from Ben Mabey's Cucumber TextMate bundle: http://github.com/bmabey/cucumber-tmbundle"
+  bundle.repository = "git://github.com/aptana/cucumber.ruble.git"
+  
   start_folding = /^\s*\b(Cenário|Cenario|Escenari|Escenario|Forgatókönyv|MISHUN|Mate|Scenarie|Scenarijus|Scenario|Scenariu|Scenariusz|Scenár|Scenārijs|Scénario|Scénář|Skenario|Stsenaarium|Szenario|Tapaus|Tình huống|Kịch bản|Сценарий|תרחיש|سيناريو|シナリオ|场景|場景|劇本|시나리오)/
   end_folding = /^\s*$/
   bundle.folding['text.cucumber.feature'] = start_folding, end_folding
