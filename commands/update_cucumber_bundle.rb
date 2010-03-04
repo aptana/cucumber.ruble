@@ -11,8 +11,6 @@ echo "<pre>"
 [ -d ".git" ] && git pull
 [ ! -d .svn ] && [ ! -d .git ] && echo "You must install the Cucumber bundle using Subversion or Git in order to update via this command."
 
-osascript -e 'tell app "TextMate" to reload bundles'
-
 echo "</pre>"
 EOF
 end
