@@ -25,7 +25,6 @@ bundle 'Cucumber' do |bundle|
     main_menu.command 'Goto Current Step'
     main_menu.command 'Run Feature'
     main_menu.command 'Run Single Scenario'
-    main_menu.command 'Update Cucumber Bundle'
     main_menu.command 'Autoformat Feature (using Cucumber)'
     main_menu.command 'Save and Align Table Cells'
   end
