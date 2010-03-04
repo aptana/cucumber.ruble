@@ -5,7 +5,7 @@ bundle 'Cucumber' do |bundle|
   end_folding = /^\s*$/
   bundle.folding['text.cucumber.feature'] = start_folding, end_folding
   bundle.file_types['text.cucumber.feature'] = '*.feature'
-  bundle.file_types['source.ruby.rspec.cucumber.steps'] = 'steps.rb'
+  bundle.file_types['source.ruby.rspec.cucumber.steps'] = '*steps.rb'
 
   bundle.menu 'Cucumber' do |main_menu|
     main_menu.command 'Feature'
