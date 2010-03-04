@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Save and Align Table Cells' do |cmd|
+command 'Autocomplete Step' do |cmd|
   cmd.key_binding = 'ALT+ESC'
   cmd.scope = 'text.cucumber.feature'
   cmd.output = :insert_as_snippet
@@ -12,6 +12,7 @@ command 'Save and Align Table Cells' do |cmd|
     rescue Cucumber::Mate::Files::InvalidFilePathError => e
       Cucumber::Mate::TextMateHelper.alert e.message
       print ENV['TM_CURRENT_LINE']
-    end
+    end    
+    nil
   end
 end
