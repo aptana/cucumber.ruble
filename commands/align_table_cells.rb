@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Save & Align Table Cells' do |cmd|
+command 'Save and Align Table Cells' do |cmd|
   cmd.key_binding = 'M1+S'
   cmd.scope = 'text.cucumber.feature'
   cmd.output = :replace_selection
