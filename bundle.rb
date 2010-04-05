@@ -32,7 +32,7 @@ bundle do |bundle|
     main_menu.command 'Run Feature'
     main_menu.command 'Run Single Scenario'
     main_menu.command 'Autoformat Feature (using Cucumber)'
-    main_menu.command 'Save and Align Table Cells'
+    main_menu.command 'Align Table Cells'
   end
 end
 
