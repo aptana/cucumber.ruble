@@ -61,6 +61,7 @@ module Cucumber
             @file_contents = File.read(full_file_path)
             lines = @file_contents.split("\n")
             lines.each do |line|
+              line.strip!
               case line
               when /\s*(When|Given|Then).+do\s*(\|[^\|]+\|){0,1}\s*(#.+|$)/
                 line << "; end"
