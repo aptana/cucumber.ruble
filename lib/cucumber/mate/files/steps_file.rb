@@ -72,7 +72,8 @@ module Cucumber
                 line.insert(0, "# ")
               end
             end
-            @file_contents = lines * "\n"
+            
+            @file_contents = (lines * "\n") + "\n"
             instance_eval(@file_contents, full_file_path, 1)
             @steps
           else

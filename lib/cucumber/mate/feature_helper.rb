@@ -10,7 +10,7 @@ module Cucumber
       include PathHelper
 
       def initialize(full_file_path)
-        @full_file_path = full_file_path
+        @full_file_path = full_file_path.gsub!(/\\/, "/")
         @file = Files::Base.create_from_file_path(full_file_path)
       end
 
