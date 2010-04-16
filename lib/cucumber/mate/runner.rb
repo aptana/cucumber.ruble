@@ -1,13 +1,22 @@
 require File.join(File.dirname(__FILE__), %w[.. mate])
 require File.join(File.dirname(__FILE__), 'files')
+require 'ruble/terminal'
+require 'rbconfig'
 
 module Cucumber
   module Mate
 
     class Runner
-      CUCUMBER_BIN = %x{which cucumber}.chomp
-      RUBY_BIN = ENV['TM_RUBY'] || %x{which ruby}.chomp
-      RAKE_BIN = %x{which rake}.chomp
+      
+      if RbConfig::CONFIG['target_os'] =~ /(win|w)32$/
+        CUCUMBER_BIN = "script/cucumber"
+        RUBY_BIN = ENV['TM_RUBY'] || "ruby"
+        RAKE_BIN = "rake"
+      else  
+        CUCUMBER_BIN = %x{which cucumber}.chomp
+        RUBY_BIN = ENV['TM_RUBY'] || %x{which ruby}.chomp
+        RAKE_BIN = %x{which rake}.chomp
+      end
       
       def initialize(output, project_directory, full_file_path, cucumber_bin = nil, cucumber_opts=nil)
         @file = Files::Base.create_from_file_path(full_file_path)
@@ -15,7 +24,7 @@ module Cucumber
         @project_directory = project_directory
         @filename_opts = ""
         @cucumber_bin = cucumber_bin || CUCUMBER_BIN
-        @cucumber_opts = cucumber_opts || "--format=html"
+        @cucumber_opts = cucumber_opts || ""
         @cucumber_opts << " --profile=#{@file.profile}" if @file.profile
       end
 
@@ -49,13 +58,13 @@ module Cucumber
           argv << @cucumber_opts
         end
         in_project_dir do
-          @output << %Q{Running: #{full_command = "#{RUBY_BIN} #{command} #{@file.rake_task} #{argv.join(' ')}"} \n}
-          @output << IO.popen(full_command, 'r') {|io| io.read }
+          full_command = "#{RUBY_BIN} #{command} #{@file.rake_task} #{argv.join(' ')}"
+          Ruble::Terminal.open( full_command, @project_directory)
         end
       end
       
       def cucumber_cmd
-        File.exists?(script = "#{@project_directory}/script/cucumber") ? script : @cucumber_bin
+        File.exists?("#{@project_directory}/script/cucumber") ? "script/cucumber" : @cucumber_bin
       end
 
       def in_project_dir(&block)
