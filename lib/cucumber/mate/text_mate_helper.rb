@@ -1,5 +1,6 @@
 require "ruble/ui"
 require "tempfile"
+require "fileutils.rb"
 
 module Cucumber
   module Mate
@@ -42,10 +43,9 @@ module Cucumber
           Ruble::UI.request_confirmation(options)
         end
 
-        # FIXME Use fileutils or something so this will work on Windows!
         def create_file(file_path)
-          `mkdir -p "#{File.dirname(file_path)}"`
-          `touch "#{file_path}"`
+          FileUtils.mkdir_p(File.dirname(file_path))
+          FileUtils.touch(file_path)
         end
 
         def create_and_open_file(file_path)
