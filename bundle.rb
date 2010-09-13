@@ -37,22 +37,10 @@ bundle do |bundle|
 end
 
 # Extend Ruble::Editor to add special ENV vars
-module Ruble
-  class Editor
-    unless method_defined?(:to_env_pre_cuke_bundle)
-      alias :to_env_pre_cuke_bundle :to_env
-      def to_env
-        env_hash = to_env_pre_cuke_bundle
-        scopes = current_scope.split(' ')
-        if !scopes.select {|scope| scope.start_with? "text.cucumber.feature" }.empty?
-          env_hash['TM_COMMENT_START'] = "# "
-          env_hash.delete('TM_COMMENT_END')
-          env_hash['TM_COMMENT_START_2'] = "=begin"
-          env_hash['TM_COMMENT_END_2'] = "=end"
-          env_hash.delete('TM_COMMENT_DISABLE_INDENT')
-        end
-        env_hash
-      end
-    end
-  end
+env "text.cucumber.feature" do |e|
+  e['TM_COMMENT_START'] = "# "
+  e.delete('TM_COMMENT_END')
+  e['TM_COMMENT_START_2'] = "=begin"
+  e['TM_COMMENT_END_2'] = "=end"
+  e.delete('TM_COMMENT_DISABLE_INDENT')
 end
