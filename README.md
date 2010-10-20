@@ -1,3 +1,14 @@
+# Cucumber bundle for Aptana Studio
+
+A bundle to enable Cucumber commands. Ported from http://github.com/aslakhellesoy/cucumber-tmbundle.
+
+## Authors
+
+* Various contributors (listed in Copyright.textile)
+* Modifications by Aptana
+
+## License
+
 Copyright (c) 2008-2009 Ben Mabey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,3 +28,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+## Other Stuff
+
+* You can [report a bug or request a feature here](http://github.com/aptana/cucumber.ruble/issues)
