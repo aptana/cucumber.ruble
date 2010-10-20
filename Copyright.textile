@@ -1,4 +1,4 @@
-h1. Textmate Bundle for Cucumber
+h1. TextMate Bundle for Cucumber
 
 This is a fork of the "rspec-story-tmbundle":http://github.com/bmabey/rspec-story-tmbundle.
 The goal is to keep the same functionality that the original bundle had but make it compatible with Cucumber and also take advantage of the benefits that Cucumber offers.
@@ -48,7 +48,7 @@ osascript -e 'tell app "TextMate" to reload bundles'
 
 h3. Migrating from RSpec Story Runner Bundle
 
-To avoid file detection collisions with the RSpec Story bundle I would suggest you turn it off when using the Cucumber bundle and vice-versa. You can do this by clicking on the 'Filter List' button in the Bundle Editor section of Textmate.
+To avoid file detection collisions with the RSpec Story bundle I would suggest you turn it off when using the Cucumber bundle and vice-versa. You can do this by clicking on the 'Filter List' button in the Bundle Editor section of TextMate.
 (Warning: Switching to the Cucumber color themes will clobber the Story runner color themes when you reinstall the theme.)
 
 h2. Updating
