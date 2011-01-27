@@ -122,7 +122,7 @@ children:
   displayName: Cucumber
   path: bundle.rb
   scope: null
-- !!com.aptana.scripting.model.EnvironmentElement {customProperties: null, displayName: snippet-4d381dc5-4042-4515-ac31-9c315c6233fc,
+- !!com.aptana.scripting.model.EnvironmentElement {customProperties: null, displayName: snippet-8765fc6f-43d1-41a4-bfc7-84dc89a88b7e,
   path: bundle.rb, scope: text.cucumber.feature}
 - !!com.aptana.scripting.model.CommandElement
   async: false
@@ -381,7 +381,7 @@ children:
   runType: current_thread
   scope: source.ruby.rspec.cucumber.steps
   workingDirectoryType: UNDEFINED
-copyright: © Copyright 2010 Aptana Inc. Distributed under the MIT license.
+copyright: Copyright 2010 Aptana Inc. Distributed under the MIT license.
 customProperties: null
 decreaseIndentMarkers: &id002 {}
 description: 'Cucumber RadRails bundle, ported from Ben Mabey''s Cucumber TextMate

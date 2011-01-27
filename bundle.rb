@@ -2,7 +2,7 @@ require 'ruble'
 
 bundle do |bundle|
   bundle.author = 'Christopher Williams'
-  bundle.copyright = "© Copyright 2010 Aptana Inc. Distributed under the MIT license."
+  bundle.copyright = "Copyright 2010 Aptana Inc. Distributed under the MIT license."
   bundle.display_name = 'Cucumber'
   bundle.description = "Cucumber RadRails bundle, ported from Ben Mabey's Cucumber TextMate bundle: http://github.com/bmabey/cucumber-tmbundle"
   bundle.repository = "git://github.com/aptana/cucumber.ruble.git"
