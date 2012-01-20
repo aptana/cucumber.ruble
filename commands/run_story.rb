@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Run Feature' do |cmd|
+command t(:run_feature) do |cmd|
   cmd.key_binding = 'M1+R'
   cmd.scope = 'text.cucumber.feature, source.ruby.rspec.cucumber.steps'
   cmd.output = :show_as_html

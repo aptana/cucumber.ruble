@@ -1,14 +1,14 @@
 # Feature snippets
 with_defaults :scope => 'text.cucumber.feature' do
   
-snippet 'Scenario (heading only)' do |s|
+snippet t(:scenario_heading_only) do |s|
   s.trigger = 'sc'
   s.expansion = 'Scenario: ${1:title}
 $0
 '
 end
 
-snippet 'Scenario Outline' do |s|
+snippet t(:scenario_outline) do |s|
   s.trigger = 'sco'
   s.expansion = 'Scenario Outline: ${1:title}
   Given ${2:context}
@@ -17,7 +17,7 @@ snippet 'Scenario Outline' do |s|
 '
 end
 
-snippet 'Scenario' do |s|
+snippet t(:scenario) do |s|
   s.trigger = 'sce'
   s.expansion = 'Scenario: ${1:title}
   Given ${2:context}
@@ -28,7 +28,7 @@ $0
 end
 
 # FIXME This seems to be inserted with a preceding newline for seom reason...
-command 'Feature' do |s|
+command t(:feature) do |s|
   s.trigger = 'fea'
   s.input = :none
   s.output = :insert_as_snippet
@@ -45,12 +45,12 @@ command 'Feature' do |s|
   end
 end
 
-snippet 'Then Step Plaintext' do |s|
+snippet t(:then_step_plaintext) do |s|
   s.trigger = 'the'
   s.expansion = 'Then ${1:outcome}'
 end
 
-snippet 'When Step Plaintext' do |s|
+snippet t(:when_step_plaintext) do |s|
   s.trigger = 'whe'
   s.expansion = 'When ${1:event}'
 end

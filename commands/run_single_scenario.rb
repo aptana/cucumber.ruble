@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Run Single Scenario' do |cmd|
+command t(:run_single_scenario) do |cmd|
   cmd.key_binding = 'M1+M2+R'
   cmd.scope = 'text.cucumber.feature'
   cmd.output = :show_as_html
