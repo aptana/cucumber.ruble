@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Autocomplete Step' do |cmd|
+command t(:autocomplete_step) do |cmd|
   cmd.key_binding = 'ALT+ESC'
   cmd.scope = 'text.cucumber.feature'
   cmd.output = :insert_as_snippet

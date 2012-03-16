@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Autoformat Feature (using Cucumber)' do |cmd|
+command t(:autoformat_feature) do |cmd|
   cmd.scope = 'text.cucumber.feature, source.ruby.rspec.cucumber.steps'
   cmd.output = :discard
   cmd.input = :none, :document

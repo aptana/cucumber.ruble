@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Goto Alternate File' do |cmd|
+command t(:goto_alternate_file) do |cmd|
   cmd.key_binding = 'CONTROL+M2+ARROW_DOWN'
   cmd.scope = 'text.cucumber.feature, source.ruby.rspec.cucumber.steps'
   cmd.output = :show_as_tooltip
