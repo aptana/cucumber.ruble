@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'ruble'
 
 bundle do |bundle|
